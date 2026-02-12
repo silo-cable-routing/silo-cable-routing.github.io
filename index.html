@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <meta
       name="description"
-      content="RFCL: Reverse Forward Curriculum Learning"
+      content="SILO: Simulation-in-the-Loop Sim-to-Real Transfer for Multi-Stage Cable Routing"
     />
     <meta
       name="keywords"
-      content="Curriculum, Reinforcement Learning, Deep Learning"
+      content="Robotics, Cable Routing, Reinforcement Learning, Simulation"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
@@ -80,12 +80,11 @@
         <hr />
         <section>
           <div class="media">
-            <video autoplay="" muted="" loop="" controls>
-              <source
-                src="./public/videos/10_5x.mp4"
-                type="video/mp4"
-              />
-            </video>
+            <img src="./public/figures/hero_figure.png" />
+          </div>
+          <br />
+          <div class="media">
+            <iframe width="560" height="315" sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-modals allow-storage-access-by-user-activation" src="https://www.youtube.com/embed/SAi7xzovn5o?si=nODDEvzdhRZ8aIzo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </section>
         <a class="anchor" id="abstract-a"></a>
@@ -94,9 +93,32 @@
           Linear-deformable manipulation remains challenging due to the highly variable and difficult-to-predict deformations of objects such as cables and ropes. Prior data-driven approaches, particularly imitation learning, have shown some promise in narrowly defined settings but typically require thousands of demonstrations for a specific tasks and cable types, limiting scalability and generalization. We introduce a sim-to-real reinforcement learning (RL) framework for multi-stage cable routing that leverages a large-scale, GPU-parallelized simulation environment to efficiently approximate linear deformable behaviors. Training across thousands of parallel simulation environments enables the learned policies to generalize across diverse cable geometries and deformation patterns. To bridge the sim-to-real gap, we propose a novel deployment strategy that combines localized RL policies, a Simulation In the Loop (SILO) execution framework, and a robust state estimation pipeline. On real-world cable routing tasks, our approach achieves higher success rates and 2x reduction in cycle times than prior methods. To our knowledge, this is the first ever successful sim-to-real transfer of an RL policy for multi-stage cable routing tasks.
         </p>
       </section>
-      <a class="anchor" id="rfcl-a"></a>
+      <a class="anchor" id="methodology-a"></a>
       <section class="details">
         
+      </section>
+      <a class="anchor" id="results-a"></a>
+      <section class="details">
+        
+      </section>
+      <a class="anchor" id="sample-rollouts-a"></a>
+      <section class="details">
+        <h2>Sample Rollouts</h2>
+        <p>Some example rollouts at 5x speed of our system. Our system can handle different configurations as well as different cable types.</p>
+        <div class="sample-videos">
+          <video autoplay="" muted="" loop="" controls>
+            <source src="./public/videos/ethernet_cable_5x.mp4" type="video/mp4" />
+          </video>
+          <video autoplay="" muted="" loop="" controls>
+            <source src="./public/videos/hdmi_cable_5x.mp4" type="video/mp4" />
+          </video>
+          <video autoplay="" muted="" loop="" controls>
+            <source src="./public/videos/nylon_rope_5x.mp4" type="video/mp4" />
+          </video>
+          <video autoplay="" muted="" loop="" controls>
+            <source src="./public/videos/tube_5x.mp4" type="video/mp4" />
+          </video>
+        </div>
       </section>
       <!-- <section class="citation">
         <h2>Citation</h2>
