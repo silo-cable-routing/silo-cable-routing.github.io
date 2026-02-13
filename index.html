@@ -34,14 +34,10 @@
           ><span>Abstract</span>
           <div class="bar"></div
         ></a>
-        <a class="barWrapper" clear href="#sample-rollouts-a" id="bar5"
-          ><span>Sample Rollouts</span>
-          <div class="bar"></div
-        ></a>
-        <a class="barWrapper" clear href="#methodology-a" id="bar3"
+        <!-- <a class="barWrapper" clear href="#methodology-a" id="bar3"
           ><span>Methodology</span>
           <div class="bar"></div
-        ></a>
+        ></a> -->
         <a class="barWrapper" clear href="#results-a" id="bar4"
           ><span>Results</span>
           <div class="bar"></div
@@ -100,7 +96,8 @@
       </section>
       <a class="anchor" id="results-a"></a>
       <section class="details">
-        <h2>Results</h2>
+        <h2>Results and Visualizations</h2>
+        <p>Acompanying the paper, we provide video visualizations of various aspects of our system.</p>
         <h3>Sample Rollouts</h3>
         <p>Some example rollouts at 5x speed of our system. Our system can handle different configurations as well as different cable types.</p>
         <div class="sample-videos">
@@ -115,6 +112,13 @@
           </video>
           <video autoplay="" muted="" loop="" controls>
             <source src="./public/videos/tube_5x.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <h3>State Estimation Visualization</h3>
+        <p>Video below shows how every prediction the state estimation system makes as our system routes a cable through multiple harnesses. Left video shows the simulation digital twin that is synchronized with the real world, with the cable visualized as a sequence of colored points. The right side shows an overlay of the real image, simulation image, and the predicted cable segmentation mask.</p>
+        <div class="media">
+          <video autoplay="" muted="" loop="" controls>
+            <source src="./public/videos/state_estimation_visualization.mp4" type="video/mp4" />
           </video>
         </div>
         <h3>Learned behaviors</h3>
@@ -135,6 +139,16 @@
             </div>
             <p class="caption" style="width: 50%;">When the cable is curved to the right of the harness, the policy swings the gripper leftward around the fixture.</p>
             <p class="caption" style="width: 50%;">When the cable is curved to the left of the harness, the policy swings the gripper rightward around the fixture.</p>
+          </div>
+          <h4>Angling behavior</h4>
+          <p>The video below is an overlay of two videos. The normal-color (white rope and gripper) overlay shows the RL policy changing the gripper orientation as it routes the cable.
+            The blue-tinted overlay shows a scripted baseline that follows the same translational trajectory as the RL policy but maintains a fixed gripper orientation. The video demonstrates how the RL policy's learned behavior depresses the cable further down towards the harness, which helps lead to more successes and faster routes.</p>
+          <div class="learned-policies">
+            <div class="media" style="width: 100%;">
+              <video autoplay="" muted="" loop="" controls>
+                <source src="./public/videos/angling_behavior.mp4" type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </section>
