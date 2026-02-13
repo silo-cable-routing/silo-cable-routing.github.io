@@ -98,8 +98,8 @@
       <section class="details">
         <h2>Results and Visualizations</h2>
         <p>Acompanying the paper, we provide video visualizations of various aspects of our system.</p>
-        <h3>Sample Rollouts</h3>
-        <p>Some example rollouts at 5x speed of our system. Our system can handle different configurations as well as different cable types.</p>
+        <h3>Sample Deployments</h3>
+        <p>Some example zero-shot sim-to-real deployments at 5x speed of our system. Our system can handle different configurations as well as different cable types. Furthermore, the solve speed is ~2x faster than the baseline with higher success rates.</p>
         <div class="sample-videos">
           <video autoplay="" muted="" loop="" controls>
             <source src="./public/videos/ethernet_cable_5x.mp4" type="video/mp4" />
@@ -151,6 +151,16 @@
             </div>
           </div>
         </div>
+        <h3>SILO Obstacle Avoidance Example</h3>
+        <p>Below we demonstrate how SILO enables implicit obstacle avoidance during deployment. The video is two videos overlaid, with one video using SILO with the harness modelled in the simulator, and the other does not model the harness.
+          
+          Since in SILO we take actions in simulation and command the real robot to move to the simulated joint angles, we guarantee that the real robot will not collide with the harness if we model the harness in the simulator.
+          <div class="media">
+            <video autoplay="" muted="" loop="" controls>
+              <source src="./public/videos/silo_obstacle_avoidance.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </p>
       </section>
       <!-- <section>
       </section> -->
