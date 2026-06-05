@@ -34,15 +34,26 @@
           ><span>Abstract</span>
           <div class="bar"></div
         ></a>
-        <!-- <a class="barWrapper" clear href="#methodology-a" id="bar3"
-          ><span>Methodology</span>
-          <div class="bar"></div
-        ></a> -->
-        <a class="barWrapper" clear href="#results-a" id="bar4"
-          ><span>Results</span>
+        <a class="barWrapper" clear href="#results-a" id="bar3"
+          ><span>Example Deployments</span>
           <div class="bar"></div
         ></a>
-        
+        <a class="barWrapper" clear href="#state-estimation-visualization-a" id="bar4"
+          ><span>State Estimation Visualization</span>
+          <div class="bar"></div
+        ></a>
+        <a class="barWrapper" clear href="#learned-behaviors-a" id="bar5"
+          ><span>Learned Behaviors</span>
+          <div class="bar"></div
+        ></a>
+        <a class="barWrapper" clear href="#silo-vs-sim2real-a" id="bar6"
+          ><span>SILO vs Sim-to-Real Tuned Controller</span>
+          <div class="bar"></div
+        ></a>
+        <a class="barWrapper" clear href="#silo-obstacle-avoidance-a" id="bar7"
+          ><span>SILO Obstacle Avoidance Example</span>
+          <div class="bar"></div
+        ></a>
       </div>
     </div>
     <main class="content">
@@ -63,7 +74,7 @@
         <section class="links">
           <ul>
             <a
-              href="https://openreview.net/forum?id=5kpVSo58BJ"
+              href="https://openreview.net/forum?id=2Y1Osh6gOU&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3Drobot-learning.org%2FCoRL%2F2026%2FConference%2FAuthors%23your-submissions)"
               rel="noreferrer"
               target="_blank"
             >
@@ -94,11 +105,12 @@
       <section class="details">
         
       </section>
-      <a class="anchor" id="results-a"></a>
       <section class="details">
+        <a class="anchor" id="results-a"></a>
         <h2>Results and Visualizations</h2>
-        <p>Acompanying the paper, we provide video visualizations of various aspects of our system.</p>
-        <h3>Sample Deployments</h3>
+        <p>Acompanying the paper, we provide video visualizations of various aspects of our system in the real-world and simulation.</p>
+        <a class="anchor" id="example-deployments-a"></a>
+        <h3>Example Deployments</h3>
         <p>Some example zero-shot sim-to-real deployments at 5x speed of our system. Our system can handle different configurations as well as different cable types. Furthermore, the solve speed is ~2x faster than the baseline with higher success rates.</p>
         <div class="sample-videos">
           <video autoplay="" muted="" loop="" controls>
@@ -114,6 +126,7 @@
             <source src="./public/videos/tube_5x.mp4" type="video/mp4" />
           </video>
         </div>
+        <a class="anchor" id="state-estimation-visualization-a"></a>
         <h3>State Estimation Visualization</h3>
         <p>Video below shows how every prediction the state estimation system makes as our system routes a cable through multiple harnesses. Left video shows the simulation digital twin that is synchronized with the real world, with the cable visualized as a sequence of colored points. The right side shows an overlay of the real image, simulation image, and the predicted cable segmentation mask.</p>
         <div class="media">
@@ -121,6 +134,7 @@
             <source src="./public/videos/state_estimation_visualization.mp4" type="video/mp4" />
           </video>
         </div>
+        <a class="anchor" id="learned-behaviors-a"></a>
         <h3>Learned behaviors</h3>
         <p>Videos below show some of the emergent behaviors we observed our RL policy learning. None of these behaviors are explicitly programmed or rewarded, but are learned due to the simple nature of the reward function.</p>
         <h4>Swinging behavior</h4>
@@ -150,6 +164,22 @@
               </video>
             </div>
           </div>
+        </div>
+        <h3>SILO vs Sim-to-Real Tuned Controller</h3>
+        <p>Below compares our SILO method with a sim-to-real tuned controller for reducing sim-to-real dynamics gaps. Overall we find in our ablation study environment that SILO achieves 15/20 successes on the routing task, whereas traditional sim-to-real deployment with system ID achieves 10/20 successes. The difference is fairly subtle, but given similar starting conditions as shown in the videos, SILO's minimal controller dynamics gap allows for successful RL skill execution in routing, whereas the sim-to-real tuned controller just fails. While SILO achieves higher success rates, it's deployment speed is slower due to the start-stop motions used to help sync with the digital twin.</p>
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+          <div class="media" style="width: 50%;">
+            <video autoplay="" muted="" loop="" controls>
+              <source src="./public/videos/tuned_sim2real.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="media" style="width: 50%;">
+            <video autoplay="" muted="" loop="" controls>
+              <source src="./public/videos/silo.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p class="caption" style="width: 50%;">Sim-to-real tuned controller</p>
+          <p class="caption" style="width: 50%;">SILO</p>
         </div>
         <h3>SILO Obstacle Avoidance Example</h3>
         <p>Below we demonstrate how SILO enables implicit obstacle avoidance during deployment. The video is two videos overlaid, with one video using SILO with the harness modelled in the simulator, and the other does not model the harness.
