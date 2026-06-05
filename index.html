@@ -39,7 +39,7 @@
           <div class="bar"></div
         ></a>
         <a class="barWrapper" clear href="#state-estimation-visualization-a" id="bar4"
-          ><span>State Estimation Visualization</span>
+          ><span>State Estimation</span>
           <div class="bar"></div
         ></a>
         <a class="barWrapper" clear href="#learned-behaviors-a" id="bar5"
@@ -47,11 +47,15 @@
           <div class="bar"></div
         ></a>
         <a class="barWrapper" clear href="#silo-vs-sim2real-a" id="bar6"
-          ><span>SILO vs Sim-to-Real Tuned Controller</span>
+          ><span>SILO vs System ID</span>
           <div class="bar"></div
         ></a>
         <a class="barWrapper" clear href="#silo-obstacle-avoidance-a" id="bar7"
-          ><span>SILO Obstacle Avoidance Example</span>
+          ><span>SILO Obstacle Avoidance</span>
+          <div class="bar"></div
+        ></a>
+        <a class="barWrapper" clear href="#cable-properties-in-real-and-simulation-a" id="bar8"
+          ><span>Cable Properties</span>
           <div class="bar"></div
         ></a>
       </div>
@@ -165,8 +169,9 @@
             </div>
           </div>
         </div>
-        <h3>SILO vs Sim-to-Real Tuned Controller</h3>
-        <p>Below compares our SILO method with a sim-to-real tuned controller for reducing sim-to-real dynamics gaps. Overall we find in our ablation study environment that SILO achieves 15/20 successes on the routing task, whereas traditional sim-to-real deployment with system ID achieves 10/20 successes. The difference is fairly subtle, but given similar starting conditions as shown in the videos, SILO's minimal controller dynamics gap allows for successful RL skill execution in routing, whereas the sim-to-real tuned controller just fails. While SILO achieves higher success rates, it's deployment speed is slower due to the start-stop motions used to help sync with the digital twin.</p>
+        <a class="anchor" id="silo-vs-sim2real-a"></a>
+        <h3>SILO vs Sim-to-Real/System ID Tuned Controller</h3>
+        <p>Below compares our SILO method against a sim-to-real/system ID tuned controller for reducing sim-to-real dynamics gaps. Overall we find in our ablation study environment that SILO achieves 15/20 successes on the routing task, whereas traditional sim-to-real deployment with system ID achieves 10/20 successes. The difference is fairly subtle, but given similar starting conditions as shown in the videos, SILO's minimal controller dynamics gap allows for successful RL skill execution in routing, whereas the sim-to-real tuned controller just fails. While SILO achieves higher success rates, it's deployment speed is slower due to the start-stop motions used to help sync with the digital twin.</p>
         <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
           <div class="media" style="width: 50%;">
             <video autoplay="" muted="" loop="" controls>
@@ -181,6 +186,7 @@
           <p class="caption" style="width: 50%;">Sim-to-real tuned controller</p>
           <p class="caption" style="width: 50%;">SILO</p>
         </div>
+        <a class="anchor" id="silo-obstacle-avoidance-a"></a>
         <h3>SILO Obstacle Avoidance Example</h3>
         <p>Below we demonstrate how SILO enables implicit obstacle avoidance during deployment. The video is two videos overlaid, with one video using SILO with the harness modelled in the simulator, and the other does not model the harness.
           
@@ -191,6 +197,8 @@
             </video>
           </div>
         </p>
+        <h3>Cable Properties in Real and Simulation</h3>
+        <p>Below shows videos of the cables tested in the real-world as well as in simulation with varying parameters. While the simulated cables are not modelling the real cables 1:1, we find with sufficient randomization during RL training in simulation states achieves a wide coverage of possible cable states that leads to successful sim-to-real transfer of simulation trained RL policies.</p>
       </section>
       <!-- <section>
       </section> -->
